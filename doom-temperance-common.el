@@ -53,6 +53,8 @@
 ;; variant is just a palette plus one macro call, see: `doom-temperance-nano-dark-theme.el'
 ;; or `doom-temperance-nano-light-theme.el' for the minimal shape this produces.
 ;;
+;; TODO support ghostel
+;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -710,21 +712,21 @@ the time it's used.")
 
     ;;; === Vterm ===============================================================
 
-    (vterm-color-black          :foreground base0           :background base3)
+    (vterm-color-black          :foreground base0                 :background base3)
     (vterm-color-blue           :foreground temperance-salient    :background bright-blue)
-    (vterm-color-cyan           :foreground blue            :background bright-blue)
-    (vterm-color-green          :foreground base6           :background base4)
+    (vterm-color-cyan           :foreground blue                  :background bright-blue)
+    (vterm-color-green          :foreground base6                 :background base4)
     (vterm-color-magenta        :foreground temperance-faded      :background temperance-salient)
     (vterm-color-red            :foreground temperance-popout     :background temperance-highlight)
-    (vterm-color-yellow         :foreground bright-blue     :background blue)
+    (vterm-color-yellow         :foreground bright-blue           :background blue)
     (vterm-color-white          :foreground temperance-foreground :background temperance-highlight)
     (vterm-color-bright-black   :foreground temperance-faded      :background base4)
-    (vterm-color-bright-blue    :foreground bright-blue     :background blue)
-    (vterm-color-bright-cyan    :foreground bright-cyan     :background cyan)
-    (vterm-color-bright-green   :foreground base8           :background base6)
+    (vterm-color-bright-blue    :foreground bright-blue           :background blue)
+    (vterm-color-bright-cyan    :foreground bright-cyan           :background cyan)
+    (vterm-color-bright-green   :foreground base8                 :background base6)
     (vterm-color-bright-magenta :foreground temperance-critical   :background orange)
     (vterm-color-bright-red     :foreground temperance-popout     :background red)
-    (vterm-color-bright-yellow  :foreground bright-cyan     :background cyan)
+    (vterm-color-bright-yellow  :foreground bright-cyan           :background cyan)
     (vterm-color-bright-white   :foreground temperance-strong     :background temperance-highlight)
     (vterm-color-underline      :underline t)
 
