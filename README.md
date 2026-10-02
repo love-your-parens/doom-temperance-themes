@@ -28,8 +28,7 @@ The `nord` spins adapt the [Nord](https://www.nordtheme.com/) to fit into Temper
 In Doom Emacs:
 
 ```elisp
-(setq doom-theme 'doom-temperance-nano-dark)
-;; or: doom-temperance-nano-light, doom-temperance-nord-dark, doom-temperance-nord-light
+(setq doom-theme 'doom-temperance-nano-dark) ; or any other provided theme
 ```
 
 Outside Doom, put this directory on `custom-theme-load-path` and load a theme as usual:
