@@ -19,6 +19,47 @@ Load a variant in Doom Emacs with `(setq doom-theme 'doom-temperance-nano-dark)`
 `use-package`/`load-theme` call per the `doom-themes` package's own
 instructions.
 
+## Design guidelines
+
+Beyond the overall restraint principle above, keep these in mind when picking
+or reviewing a palette:
+
+- Line numbers, except for the active line, should generally be less visible
+  than foreground text, so they don't fight for attention. The shared
+  template already follows this: `line-number` sits on `temperance-faded`
+  while `line-number-current-line` uses plain `fg`.
+- Strings are generally meaningful enough to deserve visual distinction from
+  the surrounding text, rather than blending into comments/other faded
+  text. This also makes common mistakes — an unclosed string, a bad escape
+  sequence — easy to spot at a glance. The shared default in
+  `doom-temperance-common-defs` collapses `strings` onto `temperance-faded`
+  (same as comments); override it per variant if that default doesn't
+  already read as distinct enough on that palette (`doom-temperance-nano-light`
+  judged its default fine and left it alone). When picking an override,
+  generally avoid introducing a brand new hue — look for a neighbor to a
+  color already in the palette instead: `doom-temperance-nano-dark` promotes
+  `strings` to `bright-blue` (a lighter neighbor of its own
+  `temperance-salient` blue), `doom-temperance-nord-light` to `base6` (a
+  step on its own grey ramp). The exception is when the "new" hue is itself
+  a defining, prominent color of the spin's origin rather than an arbitrary
+  addition: `doom-temperance-nord-dark` promotes `strings` to `green`,
+  Nord's own canonical string color (nord14) in its native ecosystem — this
+  doesn't dilute the shared vocabulary, it makes that spin read more
+  faithfully like Nord.
+
+### Checking contrast
+
+`doom-temperance-contrast.el` is a standalone WCAG contrast-ratio helper for
+picking/reviewing palette colors — not part of the shipped theme, not
+`require`d by anything else here. Load it by hand (`M-x load-file`, or
+`eval-buffer`) and call `doom-temperance-contrast` from the REPL (`M-x ielm`,
+`eval-expression`); it accepts hex strings, named colors, `color-values`-style
+16-bit triples, `color-name-to-rgb`-style float triples, or a `doom-themes`
+display triple (e.g. a palette entry pasted straight out of a theme file —
+its GUI/first element is used). See its header comment for why hex parsing is
+done by hand rather than via `color-name-to-rgb` (that function silently
+misparses hex under a frameless `emacs --batch`).
+
 ## Architecture
 
 `doom-temperance-common.el` is the shared template every variant is built
