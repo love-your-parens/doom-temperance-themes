@@ -10,7 +10,7 @@
 ;; Created          : September 2026
 ;; License          : GNU GPLv3
 ;; Package-Requires : ((emacs "28") (doom-themes "2"))
-;; Version          : 0.1
+;; Version          : 0.1.1
 ;;
 ;;; Commentary:
 ;; This package provides a dark theme for Doom Emacs based on N Λ N O.
@@ -76,8 +76,13 @@
   (white           temperance-foreground)
   (yellow          '("#ebcb8b" "#ffee58" "yellow"))
 
-  ;; Local overrides - the spice.
-  (strings         bright-blue)))
+  ;; Give distinction to strings.
+  (strings         bright-blue))
+
+ (;; Line numbers draw too much attention. Dim them.
+  (line-number              :foreground base5)
+  (line-number-current-line :foreground fg)
+  (magit-tag                :foreground bright-blue)))
 
 (provide 'doom-temperance-nano-dark-theme)
 
