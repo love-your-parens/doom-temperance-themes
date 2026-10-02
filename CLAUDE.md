@@ -47,6 +47,41 @@ or reviewing a palette:
   doesn't dilute the shared vocabulary, it makes that spin read more
   faithfully like Nord.
 
+### Wash-and-tint (a technique, not a default)
+
+`doom-flatwhite-theme.el` (upstream in `doom-themes`) marks emphasis with the
+*background*, not just foreground/weight/slant: a category like strings or
+keywords gets a pale background wash plus a foreground tinted to sit legibly
+on it — like a highlighter stroke on printed text. That's a real option worth
+having available for a future spin, but it is **not** adopted as a general
+Temperance technique — applied broadly (as flatwhite itself does, across
+strings/keywords/types/constants/variables/warnings/...) it reads as a
+traditional syntax-highlighting demo, which is exactly what the restraint
+principle exists to avoid. Reach for it narrowly (a role or two, on a spin
+where it earns its keep), not as a replacement for the family's usual
+foreground-only emphasis.
+
+Mechanically, it doesn't require new palette surface or a new hue: `doom-blend`
+(and `doom-lighten`/`doom-darken`), already available since `doom-themes` is
+required, can derive the wash by blending an accent *already in the palette*
+toward `bg`, and the same accent (or a darker step of it) serves as the
+foreground — the wash reads as a tinted version of a color that's already
+there, not an addition. Since this isn't part of the nine-accent → category
+mapping `doom-temperance-common-defs` handles generically, it has to be a
+direct face override (a variant's own `extra-faces`, or
+`doom-temperance-common-faces` if a future design genuinely wants it
+shared), e.g.:
+
+```elisp
+((font-lock-string-face :foreground temperance-salient
+                         :background (doom-blend temperance-salient bg 0.15)))
+```
+
+Check the tinted foreground's contrast against both the wash and bare `bg`
+with `doom-temperance-contrast.el` before settling on an alpha — a wash that's
+too strong starts competing with `region`/`selection`, and a foreground
+tuned only against `bg` can go illegible once it's sitting on its own wash.
+
 ### Checking contrast
 
 `doom-temperance-contrast.el` is a standalone WCAG contrast-ratio helper for
