@@ -8,7 +8,7 @@
 ;; Created          : September 2026
 ;; License          : GNU GPLv3
 ;; Package-Requires : ((emacs "28") (doom-themes "2"))
-;; Version          : 0.1
+;; Version          : 0.1.1
 ;;
 ;;; Commentary:
 ;; This package provides a minimalistic interpretation of Nord Dark.
@@ -92,10 +92,15 @@
   (teal            '("#8fbcbb" "#87afaf" "teal"))
   (violet          '("#8b8fc0" "#8787d7" "violet"))
   (white           temperance-foreground)
-  (yellow          '("#ebcb8b" "#d7d787" "yellow")))
+  (yellow          '("#ebcb8b" "#d7d787" "yellow"))
 
- ;; The cursor is too easy to miss. Make it pop.
- ((cursor :foreground bg :background temperance-popout)))
+  ;; Give distinction to strings.
+  (strings         green))
+
+  ((line-number              :foreground base6)
+   (line-number-current-line :foreground fg)
+   (magit-tag                :foreground bright-blue)
+   (cursor                   :foreground bg :background temperance-popout)))
 
 (provide 'doom-temperance-nord-dark-theme)
 
