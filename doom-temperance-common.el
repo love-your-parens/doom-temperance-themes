@@ -10,6 +10,7 @@
 ;; License          : GNU GPLv3
 ;; Package-Requires : ((emacs "28") (doom-themes "2"))
 ;; Version          : 0.1
+;; Homepage         : https://github.com/love-your-parens/doom-temperance-themes
 ;;
 ;;; Acknowledgements:
 ;;
