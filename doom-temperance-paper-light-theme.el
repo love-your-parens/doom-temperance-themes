@@ -34,7 +34,7 @@
   (temperance-salient    '("#4a8bea" "#0087ff" "brightblue"))
   (temperance-strong     '("#111111" "#121212" "black"))
   (temperance-popout     '("#df9a00" "#d78700" "orange"))
-  (temperance-critical   '("#cf313a" "#d70000" "red"))
+  (temperance-critical   '("#cf304f" "#d7005f" "red"))
 
   (base0           '("#ffffff" "#ffffff" "white"))
   (base1           '("#ecefef" "#eeeeee" "brightcyan"))
