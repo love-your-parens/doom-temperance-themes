@@ -40,7 +40,7 @@
   (temperance-subtle     '("#434c5e" "#4e4e4e" "brightblack"))
   (temperance-faded      '("#8a9ab4" "#87afd7" "cyan"))
   (temperance-salient    '("#81a1c1" "#87afd7" "brightblue"))
-  (temperance-strong     '("#f0f0f4" "#eeeeee" "brightwhite"))
+  (temperance-strong     '("#efeff3" "#eeeeee" "brightwhite"))
   (temperance-popout     '("#d08770" "#d7875f" "brightred"))
   (temperance-critical   '("#ebcb8b" "#ffd787" "yellow"))
 
